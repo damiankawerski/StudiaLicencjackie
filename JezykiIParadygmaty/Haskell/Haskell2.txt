@@ -1,0 +1,140 @@
+-- zadanie 3
+
+{- funkcja do odwracania tablicy -}
+rev :: [a] -> [a]
+rev arr = rev' arr []
+
+{- funkcja do przekladania elementow z konca na przod -}
+rev' :: [a] -> [a] -> [a] 
+rev' [] arr2 = arr2
+rev' (first:rest) arr2 = rev' rest (first:arr2)
+
+main :: IO()
+main = do
+  let x = [1, 2, 3, 4]
+  print(rev x)
+
+-- zadanie 4
+
+fun :: [(Int, Int, Int)]
+fun = [(x, y, x*y) | x <- [1..12], y <- [1..12] ]
+
+-- | warunek do tablicy
+
+main :: IO()
+main = do
+  print fun
+
+-- zadanie 5
+
+comp :: [String] -> [(String, String)]
+comp [] = []
+comp (first:rest) = [(first, x) | x <- rest] ++ comp rest
+
+-- <- x nalezy do 
+-- ++ łączysz stringi i tablice
+
+colors :: [String]
+colors = ["black", "white", "blue", "yellow", "red"]
+
+main :: IO()
+main = do
+  print (comp colors)
+
+-- zadanie 6
+
+append :: [a] -> [a] -> [a]
+append arr arr2 = arr ++ arr2
+
+{- dzieki Eq a => dajemy mozliwosc porownywania a -}
+member :: Eq a => a -> [a] -> Bool
+member x [] = False
+member x (first:rest) = first == x || member x rest
+
+lastEl :: [a] -> a
+lastEl [] = error "pusta tablica"
+lastEl [x] = x {- symbolizuje ze w tablicy jest 1 wartosc -}
+lastEl (first:rest) = lastEl rest
+
+delete :: Eq a => a -> [a] -> [a]
+delete x arr = [y | y <- arr, y /= x]
+
+split :: Ord a => a -> [a] -> ([a], [a])
+split x [] = ([], [])
+split x arr = ([y | y <- arr, y < x], [y | y <- arr, y > x])  
+
+main :: IO()
+main = do
+  let arr = [1, 2, 3, 4]
+  let arr2 = [5, 6, 7, 8]
+  print(append arr arr2)
+  print(member 2 arr)
+  print(lastEl arr)
+  print(delete 3 arr)
+  print(split 3 arr)
+
+
+
+-- zadanie 7
+
+import Prelude hiding (filter)
+
+
+filter :: (a -> Bool) -> [a] -> [a]
+filter _ [] = []
+filter p (first:rest)
+  | p first  = first : filter p rest
+  | otherwise = filter p rest
+
+
+main :: IO()
+main = do
+  let arr = [1, 2, 3, 4]
+  let arr2 = [5, 6, 7, 8]
+  print(filter even arr)  -- [2,4]
+  print(filter odd arr2)  -- [5,7]
+
+
+
+-- zadanie 8
+
+
+onlyEven :: [Int] -> [Int]
+onlyEven [] = []
+onlyEven (first:rest)
+  | first `mod` 2 == 0 = first : onlyEven rest
+  | otherwise = onlyEven rest
+
+main :: IO()
+main = do
+  let arr = [1, 2, 3, 4]
+  let arr2 = [5, 6, 7, 8]
+  print(onlyEven arr)
+
+-- zadanie 9
+
+doubleAll :: Num a => [a] -> [a]
+doubleAll [] = []
+doubleAll (first:rest) = first : first : doubleAll rest
+
+
+main :: IO()
+main = do
+  let arr = [1, 2, 3, 4]
+  let arr2 = [5, 6, 7, 8]
+  print(doubleAll arr)
+
+
+-- zadanie 10
+
+sumOfDigits :: Int -> Int
+sumOfDigits x 
+  | x == 0 = x
+  | otherwise = (x `mod` 10) + sumOfDigits(x `div` 10)
+ 
+
+main :: IO()
+main = do
+
+  print(sumOfDigits 123)
+

@@ -1,0 +1,1 @@
+/home/damian/GIT/RustSystemPrograming/MyImplementations/b12/target/debug/b12: /home/damian/GIT/RustSystemPrograming/MyImplementations/b12/src/lib.rs /home/damian/GIT/RustSystemPrograming/MyImplementations/b12/src/main.rs /home/damian/GIT/RustSystemPrograming/MyImplementations/b12/src/ulamek/mod.rs /home/damian/GIT/RustSystemPrograming/MyImplementations/b12/src/ulamek/ulamek.rs

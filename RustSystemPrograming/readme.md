@@ -1,0 +1,1 @@
+Należy zrobić wszystkie zadania OD NOWA w celu nauki do kolosa od 5a

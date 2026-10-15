@@ -1,0 +1,3 @@
+/home/damian/CLionProjects/Kolejka/cmake-build-debug/CMakeFiles/Kolejka.dir
+/home/damian/CLionProjects/Kolejka/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/damian/CLionProjects/Kolejka/cmake-build-debug/CMakeFiles/rebuild_cache.dir

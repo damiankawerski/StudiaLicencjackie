@@ -1,0 +1,77 @@
+-- 3
+% nwd(X, Y, NWD) – oblicza największy wspólny dzielnik X i Y metodą Euklidesa przez odejmowanie
+
+nwd(X, X, X) :- 
+    X > 0.
+
+nwd(X, Y, NWD) :-
+    X > Y,
+    X1 is X - Y,
+    nwd(X1, Y, NWD).
+
+nwd(X, Y, NWD) :-
+    Y > X,
+    Y1 is Y - X,
+    nwd(X, Y1, NWD).
+   
+   
+-- 4
+
+% Fakty – składniki potrzebne do produkcji produktów
+potrzebuje(p1, s1).
+potrzebuje(p1, s2).
+
+potrzebuje(p2, s2).
+potrzebuje(p2, s3).
+
+potrzebuje(p3, s1).
+potrzebuje(p3, s3).
+potrzebuje(p3, s4).
+
+% Fakty – dostępne składniki
+dostepny(s1).
+dostepny(s2).
+dostepny(s3).
+
+% Reguła – czy można produkować dany produkt (wszystkie potrzebne składniki są dostępne)
+moznaprodukowac(X) :-
+    \+ (potrzebuje(X, S1), \+ dostepny(S1)).
+    
+    
+% 7
+
+należy(X, Lista) :-	
+    member(X, Lista).
+
+% 8
+długość([], 0).
+długość([_|Ogon], Dł) :-
+    długość(Ogon, Dł1),
+    Dł is Dł1 + 1.
+
+
+% 9
+
+suma([], 0).
+suma([Głowa|Ogon], S) :-
+    suma(Ogon, S1),
+    S is S1 + Głowa.
+
+% 10
+
+ostatni(X, [X]).
+ostatni(X, [_|Ogon]) :-
+    ostatni(X, Ogon).
+
+% 11
+
+
+odwróć(Lista, Odwrocona) :-
+    odwróć(Lista, [], Odwrocona).
+
+odwróć([], Akumulator, Akumulator).
+odwróć([Głowa|Ogon], Akumulator, Wynik) :-
+    odwróć(Ogon, [Głowa|Akumulator], Wynik).
+
+
+

@@ -1,0 +1,81 @@
+-- 2
+
+square :: Int -> Int
+square a = a ^ 2
+
+cube :: Int -> Int
+cube a = a ^ 3
+
+average :: Double -> Double -> Double
+average a b = ((a + b) / 2)
+
+
+-- 3
+quadratic :: Double -> Double -> Double -> (Double, Double)
+quadratic a b c 
+  | d > 0 = (x1, x2)
+  | d == 0 = (x1, x1)
+  | otherwise =  error "Brak miejsc zerowych"
+  where 
+    d = (b ** 2) - (4 * a * c)
+    x1 = (-b - sqrt d) / (2 * a)
+    x2 = (-b + sqrt d) / (2 * a)
+  
+  
+-- 4
+factorial :: Int -> Int 
+factorial 0 = 1
+factorial 1 = 1
+factorial a = a * factorial(a - 1)
+
+
+-- 5
+
+fib :: Int -> Int
+fib a
+  | a < 0 = -1
+  | a == 0 = 0
+  | a == 1 = 1
+  | otherwise = fib(a - 1) + fib(a - 2)
+
+
+-- 6
+minmax :: (Ord a, Num a) => a -> a -> a -> a
+minmax a b c = maximum [a, b, c] - minimum [a, b, c]
+
+-- 7
+sumOfSquares :: Int -> Int -> Int
+sumOfSquares a b = (a ^ 2) + (b ^ 2)
+
+-- 8
+
+lastDigit ::  Int -> Int
+lastDigit a = abs a `mod` 10
+
+main :: IO ()
+main =  do
+  -- 2
+  print(square 4)
+  print(cube 4)
+  print(average 4 4)
+  -- 3
+  print(quadratic 1 2 1)
+  
+  
+  -- 4
+  print(factorial 6)
+  
+  -- 5
+  print(fib 4)
+  
+  -- 6
+  print (minmax 7 1 4)
+  
+  -- 7
+  
+  print (sumOfSquares 3 4)
+  
+  
+  -- 8
+  print (lastDigit 42)
+  print (lastDigit (-17))

@@ -1,0 +1,3 @@
+/home/damian/GIT/JezykiIParadygmaty/Lab2/Zadanie9/cmake-build-debug/CMakeFiles/Zadanie9.dir
+/home/damian/GIT/JezykiIParadygmaty/Lab2/Zadanie9/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/damian/GIT/JezykiIParadygmaty/Lab2/Zadanie9/cmake-build-debug/CMakeFiles/rebuild_cache.dir

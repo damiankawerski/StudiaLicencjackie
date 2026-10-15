@@ -1,0 +1,1 @@
+/home/damian/GIT/RustSystemPrograming/MyImplementations/a12/target/debug/test_i32: /home/damian/GIT/RustSystemPrograming/MyImplementations/a12/src/bin/test_i32.rs /home/damian/GIT/RustSystemPrograming/MyImplementations/a12/src/lib.rs /home/damian/GIT/RustSystemPrograming/MyImplementations/a12/src/randgen.rs /home/damian/GIT/RustSystemPrograming/MyImplementations/a12/src/urna.rs

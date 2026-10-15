@@ -1,0 +1,3 @@
+/home/damian/CLionProjects/Blenda/cmake-build-debug/CMakeFiles/Blenda.dir
+/home/damian/CLionProjects/Blenda/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/damian/CLionProjects/Blenda/cmake-build-debug/CMakeFiles/rebuild_cache.dir
